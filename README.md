@@ -14,6 +14,7 @@ for a specific year on “Citizens Acquiring” tab – The filter and sort opti
 the Eurostat dataset were used again to extract the top 5 countries that were
 granted EU citizenship for a specific year, and the number of granted
 citizenships were also obtained for each of the top five.
+![](hor_chart.jpg)
 * Pie Chart showing breakdown of granted citizenships amongst EU member
 countries for a selected top five EU citizenship acquiring expat country, for a
 specific year – The filter and sort options from the Eurostat dataset is used
