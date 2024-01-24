@@ -6,4 +6,4 @@ accessible and easy to use, with interactive features that allow users to filter
 of migration trends.
 
 # Data: 
-* Data source: [Eurostat]([https://github.com/lukasliebel/dfc2020_baseline](https://ec.europa.eu/eurostat/web/main/data)https://ec.europa.eu/eurostat/web/main/data)
+* Data source: [Eurostat](https://ec.europa.eu/eurostat/web/main/data)
