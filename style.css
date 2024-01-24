@@ -1,0 +1,139 @@
+#chartContainer {
+  float: right;
+  width: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #fff;
+	color: black;
+	margin: 0;
+	padding: 0;
+  
+}
+
+header {
+	background-color:cadetblue;
+	color: #fff;
+	padding: 40px;
+  
+  
+}
+
+main {
+	max-width: 960px;
+	margin: 20px auto;
+	padding: 0 20px;
+}
+
+
+header h1 {
+	margin: 0;
+	font-size: 32px;
+}
+/* section {
+	margin-bottom: 40px;
+} */
+
+li {
+  padding-top: 5px;
+  
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 20;
+  font: inherit;
+  cursor: pointer;
+  color: #333;
+  
+}
+
+button#year:focus{
+  background:olive;
+}
+
+
+.tablink1:hover {
+  background-color:antiquewhite;
+}
+
+.year{
+  background-color: white;
+  float: right;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+#grant{
+  display: inline-flex;
+  flex:1;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 50px;
+}
+
+
+
+#acquire{
+  display: inline-flex;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-left: 20px;
+  
+}
+
+
+
+
+.tabcontent {
+    display: none;
+    height: 50%;
+}
+  
+ .tabcontent button{
+ display: block;
+ 
+ }
+
+ .clickable-text {
+    cursor: pointer;
+    color: black;
+  }
+
+  .tabcontent1 {
+    padding-left: 40px;  
+    display: none;
+    height: 100%;
+  }
+  
+ .tabcontent1 button{
+    display: flex;
+    padding: 20px;
+ 
+ } 
+
+ 
+  
+
+
+
+
+
+
+
+.active {
+  background-color:aquamarine;
+}
+
+.chart-container {
+  display: flex;
+  
+}
+
+
+
+
+
+

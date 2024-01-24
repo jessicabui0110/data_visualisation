@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Visualization</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+	<script src="./link.js"></script>
+	<script src="https://d3js.org/d3.v6.min.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	
+	
+	
+</head>
+<body>
+	<header>
+		<h1>Data Visualization</h1>
+        
+	</header>
+	
+	<main>
+		<section>
+			<h2>Overview</h2>
+			<p>The website provides various data visualizations related to migration within the European Union (EU). The EU has experienced significant population movement in recent years, with the influx of refugees and migrants from conflict zones in the Middle East and North Africa being a major driver of this trend.</p>
+			<p>The visualization about Acquisition of citizenship may be of interest to policy-makers, researchers, journalists, activists, advocacy groups, and the general public. It allow users to explore key indicators such as the number of citizenships granted, the countries of origin and the destination.</p>
+			
+		</section>
+		
+		<section>
+			<div class="year">
+					<button id="year-2015" class="tablink" onclick="openPage('2015')">2015</button>
+					<button id="year-2016" class="tablink" onclick="openPage('2016')">2016</button>
+                    <button id="year-2017" class="tablink" onclick="openPage('2017')">2017</button>
+                    <button id="year-2018" class="tablink" onclick="openPage('2018')">2018</button>
+					<button id="year-2019" class="tablink" onclick="openPage('2019')">2019</button>
+					<button id="year-2020" class="tablink" onclick="openPage('2020')">2020</button>
+			
+			</div>
+			
+			
+				<div  id="2015" class="tabcontent">
+					
+					<button id="grant" class="tablink1" onclick="openPage1('EU_granting_2015')">EU Member States granting</button>
+					<button id="acquire" class="tablink1" onclick="openPage1('Citizens_acquiring_2015');loadDataset_pie_2015('./data-pie/2015_bar.csv');">Citizens acquiring</button>
+                    <div id="EU_granting_2015" class="tabcontent1">
+						<h3>Select country:</h3>
+						
+						<ul style="list-style-type:none;">
+						  	<li class="clickable-text" id="Aus_2015">Austria <span class="fi fi-at"></span></li>
+							<li class="clickable-text" id="Bel_2015">Belgium <span class="fi fi-be"></span></li>
+							<li class="clickable-text" id="Bul_2015">Bulgaria <span class="fi fi-bg"></span></li>
+							<li class="clickable-text" id="Cro_2015">Croatia <span class="fi fi-hr"></span></li>
+							<li class="clickable-text" id="Cyp_2015">Cyprus <span class="fi fi-cy"></span></li>
+							<li class="clickable-text" id="Cze_2015">Czechia <span class="fi fi-cz"></span></li>
+							<li class="clickable-text" id="Den_2015">Denmark <span class="fi fi-dk"></span></li>
+							<li class="clickable-text" id="Est_2015">Estonia <span class="fi fi-ee"></span></li>
+							<li class="clickable-text" id="Fin_2015">Finland <span class="fi fi-fi"></span></li>
+							<li class="clickable-text" id="Fra_2015">France <span class="fi fi-fr"></span></li>
+							<li class="clickable-text" id="Ger_2015">Germany <span class="fi fi-de"></span></li>
+							<li class="clickable-text" id="Gre_2015">Greece <span class="fi fi-gr"></span></li>
+							<li class="clickable-text" id="Hun_2015">Hungary <span class="fi fi-hu"></span></li>
+							<li class="clickable-text" id="Ire_2015">Ireland <span class="fi fi-ie"></span></li>
+							<li class="clickable-text" id="Ita_2015">Italy <span class="fi fi-it"></span></li>
+							<li class="clickable-text" id="Lat_2015">Latvia <span class="fi fi-lv"></span></li>
+							<li class="clickable-text" id="Lit_2015">Lithuania <span class="fi fi-lt"></span></li>
+							<li class="clickable-text" id="Lux_2015">Luxembourg <span class="fi fi-lu"></span></li>
+							<li class="clickable-text" id="Mal_2015">Malta <span class="fi fi-mt"></span></li>
+							<li class="clickable-text" id="Net_2015">Netherlands <span class="fi fi-nl"></span></li>
+							<li class="clickable-text" id="Pol_2015">Poland <span class="fi fi-pl"></span></li>
+							<li class="clickable-text" id="Por_2015">Portugal <span class="fi fi-pt"></span></li>
+							<li class="clickable-text" id="Rom_2015">Romania <span class="fi fi-ro"></span></li>
+							<li class="clickable-text" id="Slovalia_2015">Slovakia <span class="fi fi-sk"></span></li>
+							<li class="clickable-text" id="Slovenia_2015">Slovenia <span class="fi fi-si"></span></li>
+							<li class="clickable-text" id="Spa_2015">Spain <span class="fi fi-es"></span></li>
+							<li class="clickable-text" id="Swe_2015">Sweden <span class="fi fi-se"></span></li>
+
+						</ul>  
+					  </div>
+
+					  <div id="Citizens_acquiring_2015" class="tabcontent1">
+						<h2>Select a Country: <h6 font-style="italic">(Top Recipient Country)</h6> </h2>
+						<div class="chart-container_2015">
+						  <div id="bar-chart_2015"></div>
+						  <div id="pie-chart_2015">
+							<h3 id="pie-chart-heading" style="display: none;">Main Granting Citizenship by Country of Origin</h3>
+						<div id="legend-panel";></div>
+						  </div>
+						</div>
+						
+					  </div>
+					  
+					  
+                  </div>
+                  
+                  
+                  <div id="2016" class="tabcontent">
+					
+					<button id="grant" class="tablink1" onclick="openPage1('EU_granting_2016')">EU Member States granting</button>
+					<button id="acquire" class="tablink1" onclick="openPage1('Citizens acquiring_2016');loadDataset_pie_2016('./data-pie/2016_bar.csv');">Citizens acquiring</button>
+                    <div id="EU_granting_2016" class="tabcontent1">
+						<h3>Select country:</h3>
+						<h3 class="chart-description">EU Member States granting</h3>
+					
+						<ul style="list-style-type:none;">
+							<li class="clickable-text" id="Aus_2016">Austria <span class="fi fi-at"></span></li>
+							<li class="clickable-text" id="Bel_2016">Belgium <span class="fi fi-be"></span></li>
+							<li class="clickable-text" id="Bul_2016">Bulgaria <span class="fi fi-bg"></span></li>
+							<li class="clickable-text" id="Cro_2016">Croatia <span class="fi fi-hr"></span></li>
+							<li class="clickable-text" id="Cyp_2016">Cyprus <span class="fi fi-cy"></span></li>
+							<li class="clickable-text" id="Cze_2016">Czechia <span class="fi fi-cz"></span></li>
+							<li class="clickable-text" id="Den_2016">Denmark <span class="fi fi-dk"></span></li>
+							<li class="clickable-text" id="Est_2016">Estonia <span class="fi fi-ee"></span></li>
+							<li class="clickable-text" id="Fin_2016">Finland <span class="fi fi-fi"></span></li>
+							<li class="clickable-text" id="Fra_2016">France <span class="fi fi-fr"></span></li>
+							<li class="clickable-text" id="Ger_2016">Germany <span class="fi fi-de"></span></li>
+							<li class="clickable-text" id="Gre_2016">Greece <span class="fi fi-gr"></span></li>
+							<li class="clickable-text" id="Hun_2016">Hungary <span class="fi fi-hu"></span></li>
+							<li class="clickable-text" id="Ire_2016">Ireland <span class="fi fi-ie"></span></li>
+							<li class="clickable-text" id="Ita_2016">Italy <span class="fi fi-it"></span></li>
+							<li class="clickable-text" id="Lat_2016">Latvia <span class="fi fi-lv"></span></li>
+							<li class="clickable-text" id="Lit_2016">Lithuania <span class="fi fi-lt"></span></li>
+							<li class="clickable-text" id="Lux_2016">Luxembourg <span class="fi fi-lu"></span></li>
+							<li class="clickable-text" id="Mal_2016">Malta <span class="fi fi-mt"></span></li>
+							<li class="clickable-text" id="Net_2016">Netherlands <span class="fi fi-nl"></span></li>
+							<li class="clickable-text" id="Pol_2016">Poland <span class="fi fi-pl"></span></li>
+							<li class="clickable-text" id="Por_2016">Portugal <span class="fi fi-pt"></span></li>
+							<li class="clickable-text" id="Rom_2016">Romania <span class="fi fi-ro"></span></li>
+							<li class="clickable-text" id="Slovalia_2016">Slovakia <span class="fi fi-sk"></span></li>
+							<li class="clickable-text" id="Slovenia_2016">Slovenia <span class="fi fi-si"></span></li>
+							<li class="clickable-text" id="Spa_2016">Spain <span class="fi fi-es"></span></li>
+							<li class="clickable-text" id="Swe_2016">Sweden <span class="fi fi-se"></span></li>
+						</ul>
+
+					  </div>
+					<div id="Citizens acquiring_2016" class="tabcontent1">
+						<h2>Top Recipient Countries</h2>
+						<div class="chart-container_2016">
+						  <div id="bar-chart_2016"></div>
+						  <div id="pie-chart_2016">
+							<h3 id="pie-chart-heading" style="display: none;">Main Granting Citizenship by Country of Origin</h3>
+						  </div>
+						</div>
+					
+					</div>
+                  </div>
+                  
+                  <div id="2017" class="tabcontent">
+					
+					<button id="grant" class="tablink1" onclick="openPage1('EU_granting_2017')">EU Member States granting</button>
+					<button id="acquire" class="tablink1" onclick="openPage1('Citizens acquiring_2017');loadDataset_pie_2017('./data-pie/2017_bar.csv');">Citizens acquiring</button>
+					
+                    <div id="EU_granting_2017" class="tabcontent1">
+						<h3>Select country:</h3>
+						<h3 class="chart-description">EU Member States granting</h3>
+					
+						<ul style="list-style-type:none;">
+							<li class="clickable-text" id="Aus_2017">Austria <span class="fi fi-at"></span></li>
+							<li class="clickable-text" id="Bel_2017">Belgium <span class="fi fi-be"></span></li>
+							<li class="clickable-text" id="Bul_2017">Bulgaria <span class="fi fi-bg"></span></li>
+							<li class="clickable-text" id="Cro_2017">Croatia <span class="fi fi-hr"></span></li>
+							<li class="clickable-text" id="Cyp_2017">Cyprus <span class="fi fi-cy"></span></li>
+							<li class="clickable-text" id="Cze_2017">Czechia <span class="fi fi-cz"></span></li>
+							<li class="clickable-text" id="Den_2017">Denmark <span class="fi fi-dk"></span></li>
+							<li class="clickable-text" id="Est_2017">Estonia <span class="fi fi-ee"></span></li>
+							<li class="clickable-text" id="Fin_2017">Finland <span class="fi fi-fi"></span></li>
+							<li class="clickable-text" id="Fra_2017">France <span class="fi fi-fr"></span></li>
+							<li class="clickable-text" id="Ger_2017">Germany <span class="fi fi-de"></span></li>
+							<li class="clickable-text" id="Gre_2017">Greece <span class="fi fi-gr"></span></li>
+							<li class="clickable-text" id="Hun_2017">Hungary <span class="fi fi-hu"></span></li>
+							<li class="clickable-text" id="Ire_2017">Ireland <span class="fi fi-ie"></span></li>
+							<li class="clickable-text" id="Ita_2017">Italy <span class="fi fi-it"></span></li>
+							<li class="clickable-text" id="Lat_2017">Latvia <span class="fi fi-lv"></span></li>
+							<li class="clickable-text" id="Lit_2017">Lithuania <span class="fi fi-lt"></span></li>
+							<li class="clickable-text" id="Lux_2017">Luxembourg <span class="fi fi-lu"></span></li>
+							<li class="clickable-text" id="Mal_2017">Malta <span class="fi fi-mt"></span></li>
+							<li class="clickable-text" id="Net_2017">Netherlands <span class="fi fi-nl"></span></li>
+							<li class="clickable-text" id="Pol_2017">Poland <span class="fi fi-pl"></span></li>
+							<li class="clickable-text" id="Por_2017">Portugal <span class="fi fi-pt"></span></li>
+							<li class="clickable-text" id="Rom_2017">Romania <span class="fi fi-ro"></span></li>
+							<li class="clickable-text" id="Slovalia_2017">Slovakia <span class="fi fi-sk"></span></li>
+							<li class="clickable-text" id="Slovenia_2017">Slovenia <span class="fi fi-si"></span></li>
+							<li class="clickable-text" id="Spa_2017">Spain <span class="fi fi-es"></span></li>
+							<li class="clickable-text" id="Swe_2017">Sweden <span class="fi fi-se"></span></li>
+						</ul>
+
+					  </div>
+
+					  <div id="Citizens acquiring_2017" class="tabcontent1">
+						<h2>Top Recipient Countries</h2>
+						<div class="chart-container_2017">
+						  <div id="bar-chart_2017"></div>
+						  <div id="pie-chart_2017">
+							<h3 id="pie-chart-heading" style="display: none;">Main Granting Citizenship by Country of Origin</h3>
+						  </div>
+						</div>
+					
+					  </div>
+                  </div>
+
+				  <div id="2018" class="tabcontent">
+					
+					<button id="grant" class="tablink1" onclick="openPage1('EU_granting_2018')">EU Member States granting</button>
+					<button id="acquire" class="tablink1" onclick="openPage1('Citizens acquiring_2018');loadDataset_pie_2018('./data-pie/2018_bar.csv');">Citizens acquiring</button>
+					
+                    <div id="EU_granting_2018" class="tabcontent1">
+						<h3>Select country:</h3>
+						<h3 class="chart-description">EU Member States granting</h3>
+					
+						<ul style="list-style-type:none;">
+							<li class="clickable-text" id="Aus_2018">Austria <span class="fi fi-at"></span></li>
+							<li class="clickable-text" id="Bel_2018">Belgium <span class="fi fi-be"></span></li>
+							<li class="clickable-text" id="Bul_2018">Bulgaria <span class="fi fi-bg"></span></li>
+							<li class="clickable-text" id="Cro_2018">Croatia <span class="fi fi-hr"></span></li>
+							<li class="clickable-text" id="Cyp_2018">Cyprus <span class="fi fi-cy"></span></li>
+							<li class="clickable-text" id="Cze_2018">Czechia <span class="fi fi-cz"></span></li>
+							<li class="clickable-text" id="Den_2018">Denmark <span class="fi fi-dk"></span></li>
+							<li class="clickable-text" id="Est_2018">Estonia <span class="fi fi-ee"></span></li>
+							<li class="clickable-text" id="Fin_2018">Finland <span class="fi fi-fi"></span></li>
+							<li class="clickable-text" id="Fra_2018">France <span class="fi fi-fr"></span></li>
+							<li class="clickable-text" id="Ger_2018">Germany <span class="fi fi-de"></span></li>
+							<li class="clickable-text" id="Gre_2018">Greece <span class="fi fi-gr"></span></li>
+							<li class="clickable-text" id="Hun_2018">Hungary <span class="fi fi-hu"></span></li>
+							<li class="clickable-text" id="Ire_2018">Ireland <span class="fi fi-ie"></span></li>
+							<li class="clickable-text" id="Ita_2018">Italy <span class="fi fi-it"></span></li>
+							<li class="clickable-text" id="Lat_2018">Latvia <span class="fi fi-lv"></span></li>
+							<li class="clickable-text" id="Lit_2018">Lithuania <span class="fi fi-lt"></span></li>
+							<li class="clickable-text" id="Lux_2018">Luxembourg <span class="fi fi-lu"></span></li>
+							<li class="clickable-text" id="Mal_2018">Malta <span class="fi fi-mt"></span></li>
+							<li class="clickable-text" id="Net_2018">Netherlands <span class="fi fi-nl"></span></li>
+							<li class="clickable-text" id="Pol_2018">Poland <span class="fi fi-pl"></span></li>
+							<li class="clickable-text" id="Por_2018">Portugal <span class="fi fi-pt"></span></li>
+							<li class="clickable-text" id="Rom_2018">Romania <span class="fi fi-ro"></span></li>
+							<li class="clickable-text" id="Slovalia_2018">Slovakia <span class="fi fi-sk"></span></li>
+							<li class="clickable-text" id="Slovenia_2018">Slovenia <span class="fi fi-si"></span></li>
+							<li class="clickable-text" id="Spa_2018">Spain <span class="fi fi-es"></span></li>
+							<li class="clickable-text" id="Swe_2018">Sweden <span class="fi fi-se"></span></li>
+						</ul>
+
+					  </div>
+					<div id="Citizens acquiring_2018" class="tabcontent1">
+						<h2>Top Recipient Countries</h2>
+						<div class="chart-container_2018">
+						  <div id="bar-chart_2018"></div>
+						  <div id="pie-chart_2018">
+							<h3 id="pie-chart-heading" style="display: none;">Main Granting Citizenship by Country of Origin</h3>
+						  </div>
+						</div>
+					
+					</div>
+                  </div>
+                  
+                  
+
+				  <div id="2019" class="tabcontent">
+					
+					<button id="grant" class="tablink1" onclick="openPage1('EU_granting_2019')">EU Member States granting</button>
+					<button id="acquire" class="tablink1" onclick="openPage1('Citizens acquiring_2019');loadDataset_pie_2019('./data-pie/2019_bar.csv');">Citizens acquiring</button>
+					
+                    <div id="EU_granting_2019" class="tabcontent1">
+						<h3>Select country:</h3>
+						<h3 class="chart-description">EU Member States granting</h3>
+					
+					<ul style="list-style-type: none;">
+						<li class="clickable-text" id="Aus_2019">Austria <span class="fi fi-at"></span></li>
+						<li class="clickable-text" id="Bel_2019">Belgium <span class="fi fi-be"></span></li>
+						<li class="clickable-text" id="Bul_2019">Bulgaria <span class="fi fi-bg"></span></li>
+						<li class="clickable-text" id="Cro_2019">Croatia <span class="fi fi-hr"></span></li>
+						<li class="clickable-text" id="Cyp_2019">Cyprus <span class="fi fi-cy"></span></li>
+						<li class="clickable-text" id="Cze_2019">Czechia <span class="fi fi-cz"></span></li>
+						<li class="clickable-text" id="Den_2019">Denmark <span class="fi fi-dk"></span></li>
+						<li class="clickable-text" id="Est_2019">Estonia <span class="fi fi-ee"></span></li>
+						<li class="clickable-text" id="Fin_2019">Finland <span class="fi fi-fi"></span></li>
+						<li class="clickable-text" id="Fra_2019">France <span class="fi fi-fr"></span></li>
+						<li class="clickable-text" id="Ger_2019">Germany <span class="fi fi-de"></span></li>
+						<li class="clickable-text" id="Gre_2019">Greece <span class="fi fi-gr"></span></li>
+						<li class="clickable-text" id="Hun_2019">Hungary <span class="fi fi-hu"></span></li>
+						<li class="clickable-text" id="Ire_2019">Ireland <span class="fi fi-ie"></span></li>
+						<li class="clickable-text" id="Ita_2019">Italy <span class="fi fi-it"></span></li>
+						<li class="clickable-text" id="Lat_2019">Latvia <span class="fi fi-lv"></span></li>
+						<li class="clickable-text" id="Lit_2019">Lithuania <span class="fi fi-lt"></span></li>
+						<li class="clickable-text" id="Lux_2019">Luxembourg <span class="fi fi-lu"></span></li>
+						<li class="clickable-text" id="Mal_2019">Malta <span class="fi fi-mt"></span></li>
+						<li class="clickable-text" id="Net_2019">Netherlands <span class="fi fi-nl"></span></li>
+						<li class="clickable-text" id="Pol_2019">Poland <span class="fi fi-pl"></span></li>
+						<li class="clickable-text" id="Por_2019">Portugal <span class="fi fi-pt"></span></li>
+						<li class="clickable-text" id="Rom_2019">Romania <span class="fi fi-ro"></span></li>
+						<li class="clickable-text" id="Slovalia_2019">Slovakia <span class="fi fi-sk"></span></li>
+						<li class="clickable-text" id="Slovenia_2019">Slovenia <span class="fi fi-si"></span></li>
+						<li class="clickable-text" id="Spa_2019">Spain <span class="fi fi-es"></span></li>
+						<li class="clickable-text" id="Swe_2019">Sweden <span class="fi fi-se"></span></li>
+					</ul>
+
+					  </div>
+
+					<div id="Citizens acquiring_2019" class="tabcontent1">
+						<h2>Top Recipient Countries</h2>
+						<div class="chart-container_2019">
+						  <div id="bar-chart_2019"></div>
+						  <div id="pie-chart_2019">
+							<h3 id="pie-chart-heading" style="display: none;">Main Granting Citizenship by Country of Origin</h3>
+						  </div>
+						</div>
+					</div>
+					
+                  </div>
+
+				  <div id="2020" class="tabcontent">
+					
+					<button id="grant" class="tablink1" onclick="openPage1('EU_granting_2020')">EU Member States granting</button>
+					<button id="acquire" class="tablink1" onclick="openPage1('Citizens acquiring_2020');loadDataset_pie_2020('./data-pie/2020_bar.csv');">Citizens acquiring</button>
+					
+                    <div id="EU_granting_2020" class="tabcontent1">
+					  <h3>Select country:</h3>	
+					  <h3 class="chart-description">EU Member States granting</h3>
+					
+					<ul style="list-style-type: none;">
+						<li class="clickable-text" id="Aus_2020">Austria <span class="fi fi-at"></span></li>
+						<li class="clickable-text" id="Bel_2020">Belgium <span class="fi fi-be"></span></li>
+						<li class="clickable-text" id="Bul_2020">Bulgaria <span class="fi fi-bg"></span></li>
+						<li class="clickable-text" id="Cro_2020">Croatia <span class="fi fi-hr"></span></li>
+						<li class="clickable-text" id="Cyp_2020">Cyprus <span class="fi fi-cy"></span></li>
+						<li class="clickable-text" id="Cze_2020">Czechia <span class="fi fi-cz"></span></li>
+						<li class="clickable-text" id="Den_2020">Denmark <span class="fi fi-dk"></span></li>
+						<li class="clickable-text" id="Est_2020">Estonia <span class="fi fi-ee"></span></li>
+						<li class="clickable-text" id="Fin_2020">Finland <span class="fi fi-fi"></span></li>
+						<li class="clickable-text" id="Fra_2020">France <span class="fi fi-fr"></span></li>
+						<li class="clickable-text" id="Ger_2020">Germany <span class="fi fi-de"></span></li>
+						<li class="clickable-text" id="Gre_2020">Greece <span class="fi fi-gr"></span></li>
+						<li class="clickable-text" id="Hun_2020">Hungary <span class="fi fi-hu"></span></li>
+						<li class="clickable-text" id="Ire_2020">Ireland <span class="fi fi-ie"></span></li>
+						<li class="clickable-text" id="Ita_2020">Italy <span class="fi fi-it"></span></li>
+						<li class="clickable-text" id="Lat_2020">Latvia <span class="fi fi-lv"></span></li>
+						<li class="clickable-text" id="Lit_2020">Lithuania <span class="fi fi-lt"></span></li>
+						<li class="clickable-text" id="Lux_2020">Luxembourg <span class="fi fi-lu"></span></li>
+						<li class="clickable-text" id="Mal_2020">Malta <span class="fi fi-mt"></span></li>
+						<li class="clickable-text" id="Net_2020">Netherlands <span class="fi fi-nl"></span></li>
+						<li class="clickable-text" id="Pol_2020">Poland <span class="fi fi-pl"></span></li>
+						<li class="clickable-text" id="Por_2020">Portugal <span class="fi fi-pt"></span></li>
+						<li class="clickable-text" id="Rom_2020">Romania <span class="fi fi-ro"></span></li>
+						<li class="clickable-text" id="Slovalia_2020">Slovakia <span class="fi fi-sk"></span></li>
+						<li class="clickable-text" id="Slovenia_2020">Slovenia <span class="fi fi-si"></span></li>
+						<li class="clickable-text" id="Spa_2020">Spain <span class="fi fi-es"></span></li>
+						<li class="clickable-text" id="Swe_2020">Sweden <span class="fi fi-se"></span></li>
+					</ul>
+
+					  </div>
+					  
+
+					<div id="Citizens acquiring_2020" class="tabcontent1">
+						<h2>Top Recipient Countries</h2>
+						<div class="chart-container_2020">
+						  <div id="bar-chart_2020"></div>
+						  <div id="pie-chart_2020">
+							<h3 id="pie-chart-heading" style="display: none;">Main Granting Citizenship by Country of Origin</h3>
+						  </div>
+						</div>
+					</div>
+					
+                  </div>
+				  
+				  <div id="chartContainer"></div>
+				
+				<!-- <script src="./drawPie.js"></script> -->
+				<script src="./draw_pie_2015.js"></script> 
+				<script src="./draw_pie_2016.js"></script>
+				<script src="./draw_pie_2017.js"></script>
+				<script src="./draw_pie_2018.js"></script>
+				<script src="./draw_pie_2019.js"></script>
+				<script src="./draw_pie_2020.js"></script>
+				<script src="./getdata_bar.js"></script>
+				<script src="./draw_bar.js"></script>	  
+				  
+				 
+				  
+   
+			
+		</section>
+        
+ 
+	</main>
+	
+	<footer>
+		<p>2023 Data Visualization</p>
+	</footer>
+</body>
+</html>
