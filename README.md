@@ -29,4 +29,4 @@ The remainder of the total citizenships is calculated as a percentage for
 “Other”. The data for percentages of granted citizenships is recorded for
 visualisation through a pie chart.
 
-![](pie_chart.jpg)
+![](pie_chart.png)
